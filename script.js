@@ -48,7 +48,7 @@ function convertToC(fahrenheit) {
   }
 
 //Function to get weather details 
-function getWeather(i) {
+function getWeather(t) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + t + "&units=imperial&appid=" + APIKey;
     $.ajax({
         // gets the current weather info
@@ -124,8 +124,8 @@ function currentLocation() {
         method: "GET",
     }).then(function (response) {
         t = response.city || 'exton';
-        console.log(i);
-        getWeather(i);
+        console.log(t);
+        getWeather(t);
     });
 };
 
